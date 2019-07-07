@@ -12,11 +12,11 @@ body { background: #fff; font-family: "Source Sans Pro", sans-serif; color: #7a7
 .section-title span { text-transform: none; font-weight: 400; color: #adadad; }
 
 /* Layout */
-.wrapper { display: flex; margin-left: 10px; }
+.wrapper { display: -ms-flexbox; display: flex; margin-left: 10px; }
 
-.sidebar { flex: 1 0 0; }
+.sidebar { -ms-flex: 1 0 0px; flex: 1 0 0; }
 
-.posts { flex: 2 0 0; }
+.posts { -ms-flex: 2 0 0px; flex: 2 0 0; }
 
 .sidebar, .posts { background: #fff; margin-right: 10px; padding: 40px; border: 1px solid #7a7a7a; border-radius: 5px; }
 
@@ -40,6 +40,6 @@ body { background: #fff; font-family: "Source Sans Pro", sans-serif; color: #7a7
 
 .post-author { font-style: italic; }
 
-.post-tags { display: flex; }
+.post-tags { display: -ms-flexbox; display: flex; }
 
 .post-tags p { margin: 0 10px 0 0; }

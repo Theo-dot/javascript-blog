@@ -78,9 +78,7 @@ function generateTitleLinks(customSelector = ''){
     /* insert link into titleList */
   
     html = html + linkHTML;
-
   }
-
   titleList.innerHTML = html;
   const links = document.querySelectorAll('.titles a');
   for(let link of links){
@@ -152,7 +150,6 @@ function tagClickHandler(event){
 
   const href = clickedElement.getAttribute('href');
   
-
   /* make a new constant "tag" and extract tag from the "href" constant */
 
   const tag = href.replace('#tag-', '');
@@ -225,13 +222,11 @@ function generateAuthors(){
 
 generateAuthors();
 
-
 function authorClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
   const href = clickedElement.getAttribute('href');
   const author = href.replace('#author-', '');
-  console.log(author);
   const authorLinks = document.querySelectorAll('a[href^="#author-"]');
   
   for (let authorLink of authorLinks){

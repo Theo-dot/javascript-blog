@@ -37,8 +37,6 @@ function titleClickHandler(event){
   targetArticle.classList.add('active');
 }
 
-
-
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
@@ -46,11 +44,10 @@ const optArticleSelector = '.post',
 function generateTitleLinks(){
 
   let html = '';
+
   /* remove contents of titleList */
 
   const titleList = document.querySelector(optTitleListSelector);
-  console.log(titleList);
-
   function clearMessages(){
     titleList.innerHTML = '';
   }
@@ -86,7 +83,5 @@ function generateTitleLinks(){
   for(let link of links){
     link.addEventListener('click', titleClickHandler);
   }
-  
 }
-
 generateTitleLinks();

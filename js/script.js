@@ -62,7 +62,6 @@ function calculateTagsParams(tags) {
     if (tags[tag] < params.min) {
       params.min = tags[tag];
     }
-    console.log(tag + ' is used ' + tags[tag] + ' times');
   }
   return params;
 }
@@ -75,7 +74,6 @@ function calculateTagClass(count, params) {
 }
 
 const tags = document.querySelector(optTagsListSelector);
-console.log(tags);
 
 function generateTags() {
   const articles = document.querySelectorAll(optArticleSelector);
@@ -155,13 +153,11 @@ function generateAuthors() {
 
   const authorsList = document.querySelector('.authors');
   let allAuthorsHTML = '';
-  console.log('allauthors', allAuthors);
-  const tagsParams = calculateTagsParams(allAuthors);
-  console.log(tagsParams);
+  const authorsParams = calculateTagsParams(allAuthors);
   for (let author in allAuthors) {
     allAuthorsHTML += `<li><a href="#author-${author}" class=${calculateTagClass(
       allAuthors[author],
-      tagsParams
+      authorsParams
     )}><span>${author}&nbsp</span></a></li>`;
   }
   authorsList.innerHTML = allAuthorsHTML;
@@ -193,5 +189,3 @@ function addClickListenersToAuthors() {
 }
 
 addClickListenersToAuthors();
-
-/* Tag Cloud */

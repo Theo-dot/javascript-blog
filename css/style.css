@@ -4,7 +4,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -14,6 +15,10 @@ body {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -36,19 +41,22 @@ body {
 
 /* Layout */
 .wrapper {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-left: 10px;
 }
 
 .sidebar {
-  -ms-flex: 1 0 0px;
-      flex: 1 0 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
 }
 
 .posts {
-  -ms-flex: 2 0 0px;
-      flex: 2 0 0;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 0 0px;
+          flex: 2 0 0;
 }
 
 .sidebar,
@@ -84,9 +92,44 @@ body {
   display: inline-block;
 }
 
+.tags, .authors {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.tags li, .authors li {
+  list-style: none;
+  display: inline-block;
+}
+
+.tags .tag-size-5, .authors .tag-size-5 {
+  font-size: 32px;
+  color: #3aa8d3;
+}
+
+.tags .tag-size-4, .authors .tag-size-4 {
+  font-size: 29px;
+  color: #f02f2f;
+}
+
+.tags .tag-size-3, .authors .tag-size-3 {
+  font-size: 27px;
+  color: #62db62;
+}
+
+.tags .tag-size-2, .authors .tag-size-2 {
+  font-size: 25px;
+  color: #fde144;
+}
+
+.tags .tag-size-1, .authors .tag-size-1 {
+  font-size: 20px;
+  color: #f71ce4;
+}
+
 /* Authors */
 .authors li {
-  margin-bottom: 12px;
+  margin-bottom: 0px;
 }
 
 /* Post */
@@ -103,6 +146,7 @@ body {
 }
 
 .post-tags {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }

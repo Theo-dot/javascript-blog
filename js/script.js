@@ -20,11 +20,9 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optTagsListSelector = '.tags.list',
   optCloudClassCount = 5,
   optCloudClassPrefix = 'tag-size-',
   optArticleAuthorSelector = '.post-author',
-  optAuthorsListSelector = '.list.authors';
 
 function generateTitleLinks(customSelector = '') {
   let html = '';

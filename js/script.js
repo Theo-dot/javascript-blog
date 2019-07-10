@@ -73,8 +73,6 @@ function calculateTagClass(count, params) {
   return optCloudClassPrefix + classNumber;
 }
 
-const tags = document.querySelector(optTagsListSelector);
-
 function generateTags() {
   const articles = document.querySelectorAll(optArticleSelector);
   let allTags = {};
@@ -87,7 +85,7 @@ function generateTags() {
     for (let tag of articleTagsArray) {
       const linkHTML = `<li><a href="#tag-${tag}"><span>${tag}&nbsp</span></a></li>`;
       html = html + linkHTML;
-      if (!allTags.hasOwnProperty(tag)) {
+      if (!Object.prototype.hasOwnProperty.call(allTags, tag)) {
         allTags[tag] = 1;
       } else {
         allTags[tag]++;
@@ -137,12 +135,11 @@ addClickListenersToTags();
 function generateAuthors() {
   let allAuthors = {};
   const articles = document.querySelectorAll(optArticleSelector);
-  const authors = document.querySelector(optAuthorsListSelector);
   for (let article of articles) {
     const authorList = article.querySelector(optArticleAuthorSelector);
     const articleAuthor = article.getAttribute('data-author');
     const linkHTML = `<a href="#author-${articleAuthor}"><span>${articleAuthor}&nbsp</span></a>`;
-    if (!allAuthors.hasOwnProperty(articleAuthor)) {
+    if (!Object.prototype.hasOwnProperty.call(allAuthors, articleAuthor)) {
       allAuthors[articleAuthor] = 1;
     } else {
       allAuthors[articleAuthor]++;

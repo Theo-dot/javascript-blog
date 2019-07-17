@@ -119,7 +119,6 @@ function generateTags() {
         linkHTML = templates.tagLink(linkHTMLData);
 
       html = html + linkHTML;
-
       if (!Object.prototype.hasOwnProperty.call(allTags, tag)) {
         allTags[tag] = 1;
       } else {

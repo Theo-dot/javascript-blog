@@ -56,7 +56,9 @@ function generateTitleLinks(customSelector = '') {
   function clearMessages() {
     titleList.innerHTML = '';
   }
+
   clearMessages();
+
   const articles = document.querySelectorAll(
     optArticleSelector + customSelector
   );
@@ -159,7 +161,7 @@ function tagClickHandler(event) {
   for (let hrefLink of hrefLinks) {
     hrefLink.classList.add('active');
   }
-
+  
   generateTitleLinks('[data-tags~="' + tag + '"]');
 }
 
